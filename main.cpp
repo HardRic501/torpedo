@@ -1,10 +1,11 @@
 #include "application.hpp"
 #include "field.hpp"
 #include "shipbutton.hpp"
+#include "button.hpp"
 
 int main()
 {
-    Application app(780,660, "Torpedó");
+
 
     Field* A = new Field(60,120,10);
     A->loadSquaresVector();
@@ -12,12 +13,18 @@ int main()
     Field* B = new Field(420,120,10);
     B->loadSquaresVector();
 
-    //ShipButton* five1 = new ShipButton(60,450,5);
+    Button* AReady = new Button(270,60,90,30,"A ready!",A);
+    Button* BReady = new Button(630,60,90,30,"B ready!",B);
+
+    Referee Boss(A, B, "startScreen");
+
+    Application app(780,660, "Torpedó", Boss);
 
 
     app.addWidget(A);
     app.addWidget(B);
-    //app.addWidget(five1);
+    app.addWidget(AReady);
+    app.addWidget(BReady);
     app.run();
 
     return 0;

@@ -3,6 +3,8 @@
 
 #include "widgets.hpp"
 #include <vector>
+#include "referee.hpp"
+
 
 class Application { // grafikus alkalmazás
     protected:
@@ -10,10 +12,11 @@ class Application { // grafikus alkalmazás
         int focused;                    // megadja, hogy melyik vezérlõn van a fókusz
         bool isExiting;                 // kilépés alatt áll-e a program
         int SX, SY;                     // képernyõ méret
-        std::string name;                    // az alkalmazás neve
+        std::string name;               // az alkalmazás neve
+        Referee Boss;
 
     public:
-        Application( int _SX, int _SY, std::string _name );// ablak méret és név alapján program létrehozása
+        Application( int _SX, int _SY, std::string _name, Referee _Boss);// ablak méret és név alapján program létrehozása
         void addWidget( Widget *w );    // új vezérlõ felvétele
         void run();                     // futtatás
         void shutdown();                // leállítás
