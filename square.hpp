@@ -9,16 +9,23 @@ using namespace std;
 class Square
 {
 protected:
-    int xStartCoord, yStartCoord, xEndCoord, yEndCoord;
-    string state;
+    string type;
+    int ship;
+
+
 
 public:
-    Square( int _xStartCoord, int _yStartCoord, string _state);
+    Square(string _type, int _ship);
 
-    void draw();
-    string getState();
-    void setState(string newState);
+    string get_type();
+    void set_type(string newType);
 
+    //string get_rotation();
+    //void set_rotation(string newRotation);
+
+
+    int get_ship();
+    void set_ship(int newValue);
 
 };
 

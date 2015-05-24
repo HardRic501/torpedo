@@ -1,30 +1,16 @@
 #include "square.hpp"
+#include <iostream>
 
 using namespace genv;
+using namespace std;
 
-Square::Square(int _xStartCoord, int _yStartCoord, string _state) : xStartCoord(_xStartCoord), yStartCoord(_yStartCoord), state(_state)
-{
-    xEndCoord = _xStartCoord+30;
-    yEndCoord = _yStartCoord+30;
-}
+Square::Square(string _type, int _ship) : type(_type), ship(_ship){}
 
-void Square::draw()
-{
-    gout<<color(255,255,255)<<move_to(xStartCoord, yStartCoord)<<line_to(xEndCoord,yStartCoord)
-                                                               <<line_to(xEndCoord,yEndCoord)
-                                                               <<line_to(xStartCoord,yEndCoord)
-                                                               <<line_to(xStartCoord,yStartCoord);
+    string Square::get_type() {return type;}
+    void Square::set_type(string newType){type = newType;}
 
 
-}
 
-string Square::getState()
-{
-    return state;
-}
+    int Square::get_ship() {return ship;}
+    void Square::set_ship(int newValue) {ship=newValue;}
 
-
-void Square::setState(string newState)
-{
-    state=newState;
-}
