@@ -55,6 +55,8 @@ class Field : public Widget {
         void set_ingame(bool newValue);
         bool get_enemysTurnOnMyField();
         void set_enemysTurnOnMyField(bool newValue);
+        int get_opponentScore();
+
 
 
 

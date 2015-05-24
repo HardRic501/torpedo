@@ -11,7 +11,7 @@ Field::Field( int _x, int _y, int _fieldSize):Widget( _x, _y), fieldSize(_fieldS
     size_y=fieldSize*30+240;
     placing = "0";
     ingame = 0;
-    enemysTurnOnMyField = 1;
+    enemysTurnOnMyField = 0;
     opponentScore=0;
     pushed5v = 0;
     pushed5h = 0;
@@ -597,7 +597,9 @@ void Field::handle(event ev)
 
                 }
             }
+            enemysTurnOnMyField = 0;
     }
+
 }
 
 
@@ -641,3 +643,5 @@ void Field::set_enemysTurnOnMyField(bool newValue)
 {
     enemysTurnOnMyField = newValue;
 }
+
+int Field::get_opponentScore(){return opponentScore;}

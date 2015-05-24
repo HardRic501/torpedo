@@ -13,10 +13,10 @@ class Application { // grafikus alkalmazás
         bool isExiting;                 // kilépés alatt áll-e a program
         int SX, SY;                     // képernyõ méret
         std::string name;               // az alkalmazás neve
-        Referee Boss;
+        Referee* Boss;
 
     public:
-        Application( int _SX, int _SY, std::string _name, Referee _Boss);// ablak méret és név alapján program létrehozása
+        Application( int _SX, int _SY, std::string _name, Referee* _Boss);// ablak méret és név alapján program létrehozása
         void addWidget( Widget *w );    // új vezérlõ felvétele
         void run();                     // futtatás
         void shutdown();                // leállítás
